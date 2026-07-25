@@ -1,0 +1,163 @@
+/* ============================================================
+   LEADERS ENGLISH INSTITUTE - FINAL RESPONSIVE CSS
+   (Desktop par Tailwind chalega, Mobile par yeh CSS fix karegi)
+   ============================================================ */
+
+/* 1. Global Screen Fix (Taaki website mobile ki screen se bahar na nikle) */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================
+   2. MOBILE RESPONSIVE FIXES (Phone ke liye)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* A. Fix Massive Padding: Mobile par extra jagah khatam karna */
+    section, header, footer, .py-20, .px-20, .px-16 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    /* B. Columns ko Stack karna: Jo cheezein aamne-saamne hain unhe upar-neechay karna */
+    section.flex, footer > div.flex, .row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        align-items: center !important;
+        text-align: center !important; /* Mobile par text center mein acha lagta hai */
+    }
+
+    /* C. Width Fix: 50% width wale boxes ko mobile par 100% karna */
+    [class*="w-1/2"], [class*="w-1/4"], .col {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* D. MAGIC FIX (Text First, Image Below) */
+    /* Text wale hissay ko zabardasti order 1 (Upar) kar diya */
+    section.flex > div {
+        order: 1 !important;
+    }
+    
+    /* Picture ko zabardasti order 2 (Neechay) aur Square + Medium kar diya */
+    section.flex > img, 
+    section.flex > div > img {
+        order: 2 !important;
+        width: 100% !important;
+        max-width: 320px !important;   /* Picture Medium Size ki hogi */
+        height: 320px !important;      /* Picture Square shape mein hogi */
+        object-fit: cover !important;  /* Picture khichegi nahi, perfectly cut hogi */
+        border-radius: 15px !important; /* SMIT ki tarah corners gol */
+        margin: 20px auto 0 auto !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* E. Navbar Mobile Fix */
+    header nav {
+        display: none !important; /* Desktop menu phone par hide kar diya */
+    }
+    header {
+        flex-direction: row !important; /* Logo aur Apply button aamne saamne rahenge */
+        justify-content: space-between !important;
+        padding: 15px 20px !important;
+    }
+    header img {
+        max-height: 45px !important;
+        width: auto !important;
+    }
+
+    /* F. Registration Form Fixes (SMIT Style) */
+    .form-card, form {
+        width: 100% !important;
+        padding: 20px !important;
+        margin: 10px auto !important;
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+    }
+    input, select, textarea {
+        width: 100% !important;
+        padding: 14px 15px !important;
+        border-radius: 8px !important;
+        border: 1px solid #cbd5e1 !important;
+        background-color: #f8fafc !important;
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+    }
+    .submit-btn {
+        width: 100% !important;
+        padding: 16px !important;
+        border-radius: 10px !important;
+    }
+
+    /* G. Badi Headings ko Phone ke hisaab se chota karna */
+    .text-7xl { font-size: 2.2rem !important; line-height: 1.2 !important; }
+    .text-5xl { font-size: 1.8rem !important; line-height: 1.2 !important; }
+    .text-2xl { font-size: 1.15rem !important; }
+}
+
+
+/* ==========================================
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 1. Achievement section */
+    section .max-w-6xl {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+        padding: 0 15px !important;
+    }
+
+    section .max-w-6xl > div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. Courses section & Filters */
+    .courses-grid, .grid, .container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    .card, .box, .course-item {
+        width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 3. Main wrapper & Sidebar for courses.html */
+    .main-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    #sidebar {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    #courses-grid {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }

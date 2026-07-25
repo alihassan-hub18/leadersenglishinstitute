@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- SEO Meta Tags & Keywords for Leaders English Institute -->
+<meta name="description" content="Leaders English Institute in Rawalpindi offers professional training in IELTS, PTE, Spoken English, OET, Oxford Language Certificate, Duolingo, TOEFL, Freelancing, Graphic Design, Web Development, and Digital Marketing.">
+<meta name="keywords" content="English Institute in Rawalpindi, IELTS preparation Rawalpindi, PTE coaching Rawalpindi, Spoken English classes Rawalpindi, OET preparation, Computer courses Rawalpindi, Freelancing training Rawalpindi, Leaders English Institute">
+<meta name="author" content="Leaders English Institute">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <header class="flex flex-col md:flex-row justify-between items-center py-6 px-16 bg-white shadow-sm gap-4"></header>
+   <style>
+   
+
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f9; margin: 0; }
+        .header-banner { background: linear-gradient(90deg, #007bff, #8dc63f); color: white; padding: 60px 10%; }
+        .main-wrapper { display: flex; padding: 30px 10%; gap: 30px; }
+        
+        /* Sidebar Styles */
+        .sidebar { width: 300px; flex-shrink: 0; }
+        .search-box { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin: 10px 0; box-sizing: border-box; }
+        .btn { width: 100%; padding: 12px; margin-bottom: 10px; border: none; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; }
+        
+        /* Card Styles */
+        .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; flex-grow: 1; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-body { padding: 15px; }
+        .enroll-btn { display: block; width: 90%; margin: 10px auto 20px auto; text-align: center; background: #007bff; color: white; padding: 12px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="header-banner">
+    <h1>Explore Our Courses</h1>
+    <p>Discover world-class programs at Leaders English Institute.</p>
+</div>
+
+<div class="main-wrapper">
+    <div class="sidebar">
+        <h3>Filters</h3>
+        <input type="text" id="searchInput" class="search-box" placeholder="Search course...">
+        <button class="btn" style="background: linear-gradient(90deg, #007bff, #8dc63f);">Admissions Open</button>
+        <button class="btn" style="background: #007bff;">All Categories</button>
+    </div>
+
+    <div class="course-grid" id="courseGrid"></div>
+</div>
+
+<script>
+    const coursesData = {
+    "IELTS": { duration: "2 Months", bio: "Reading, Writing, Listening, Speaking modules.", img: "images/ielts.jpg" },
+    "PTE": { duration: "2 Months", bio: "Complete Speaking, Writing, Reading, Listening prep.", img: "images/pte.jpg" },
+     "SPOKEN ENGLISH": { duration: "2 Months", bio: "Fluency, grammar, and conversation practice.", img: "images/spoken.jpg" },
+    "OET": { duration: "2 Months", bio: "English training for healthcare professionals.", img: "images/oet.jpg" },
+    "OXFORD": { duration: "2 Months", bio: "Standard Oxford language curriculum.", img: "images/oxford.jpg" },
+    "LANGUAGE CERT": { duration: "2 Months", bio: "International certification preparation.", img: "images/langcert.jpg" },
+    "DUOLINGO": { duration: "1 Month", bio: "Fast-track Duolingo test preparation.", img: "images/duolingo.jpg" },
+    "TOEFL": { duration: "2 Months", bio: "Academic English assessment preparation.", img: "images/toefl.jpg" },
+    "FREELANCING": { duration: "3 Months", bio: "Platform setup and client communication.", img: "images/freelancing.jpg" },
+    "GRAPHICS DESIGNING": { duration: "3 Months", bio: "Photoshop, Illustrator, Canva basics.", img: "images/graphic_design.jpg" },
+    "WEB DEVELOPMENT": { duration: "4 Months", bio: "HTML, CSS, JavaScript, and responsive design.", img: "images/web.jpg" },
+    "DIGITAL MARKETING": { duration: "3 Months", bio: "SEO, Content Strategy, and Online Marketing.", img: "images/digital.jpg" },
+    "SOCIAL MEDIA MARKETING": { duration: "3 Months", bio: "Facebook, Instagram, and LinkedIn ads.", img: "images/social.jpg" },
+    "BASIC IT": { duration: "3 Months", bio: "Computer basics and Windows usage.", img: "images/basic_it.jpg" },
+    "VIDEO EDITING": { duration: "3 Months", bio: "Professional video editing techniques.", img: "images/video.jpg" },
+    "GOOGLE ADS": { duration: "3 Months", bio: "Search and display campaigns management.", img: "images/google_ads.jpg" },
+    "MICROSOFT OFFICE": { duration: "3 Months", bio: "Word, PowerPoint, and Outlook expertise.", img: "images/office.jpg" },
+    "EXCEL": { duration: "1.5 Months", bio: "Data management, formulas, and Pivot tables.", img: "images/excel.jpg" },
+    "TYPING": { duration: "1 Month", bio: "Professional speed typing and accuracy training.", img: "images/typing.jpg" },
+   
+};
+
+    const grid = document.getElementById('courseGrid');
+
+    function render(filter = "") {
+        grid.innerHTML = "";
+        for (let name in coursesData) {
+            if (name.toLowerCase().includes(filter.toLowerCase())) {
+                let c = coursesData[name];
+                grid.innerHTML += `
+                    <div class="card">
+                        <img src="${c.img}" alt="${name}">
+                        <div class="card-body">
+                            <h3>${name}</h3>
+                            <p style="color: #666; font-size: 14px;">Duration: <b>${c.duration}</b></p>
+                            <p style="font-size: 13px; color: #777;">${c.bio}</p>
+                        </div>
+                        <a href="register.html?course=${encodeURIComponent(name)}" class="enroll-btn">Enroll Now</a>
+                    </div>
+                `;
+            }
+        }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => render(e.target.value));
+    render();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <header class="flex flex-col md:flex-row justify-between items-center py-6 px-16 bg-white shadow-sm gap-4"></header>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- SEO Meta Tags & Keywords for Leaders English Institute -->
+<meta name="description" content="Leaders English Institute in Rawalpindi offers professional training in IELTS, PTE, Spoken English, OET, Oxford Language Certificate, Duolingo, TOEFL, Freelancing, Graphic Design, Web Development, and Digital Marketing.">
+<meta name="keywords" content="English Institute in Rawalpindi, IELTS preparation Rawalpindi, PTE coaching Rawalpindi, Spoken English classes Rawalpindi, OET preparation, Computer courses Rawalpindi, Freelancing training Rawalpindi, Leaders English Institute">
+<meta name="author" content="Leaders English Institute">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+    <title>Registration Form</title>
+    <style>
+        /* Aapka purana styling structure */
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f9; margin: 0; padding-bottom: 50px; }
+        .header-banner { background: linear-gradient(90deg, #007bff, #8dc63f); color: white; padding: 40px 10%; }
+        .form-card { background: white; max-width: 900px; margin: -50px auto 0 auto; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .section-title { color: #2c3e50; font-size: 20px; border-bottom: 2px solid #007bff; display: inline-block; margin-bottom: 20px; }
+        .row { display: flex; gap: 20px; margin-bottom: 20px; }
+        .col { flex: 1; }
+        input, select { width: 100%; padding: 15px; border: 1px solid #d1d9e0; border-radius: 8px; box-sizing: border-box; color: #666; }
+        
+        /* Error handling styles */
+        .error-message { color: red; font-size: 12px; display: none; margin-top: 5px; }
+        .input-error { border: 1px solid red !important; }
+        
+        .submit-btn { width: 100%; padding: 18px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="header-banner">
+    <h1>Registration Form</h1>
+    <p>Start your journey towards excellence. Fill out the form to apply for our courses</p>
+</div>
+    
+        <form action="https://formspree.io/f/mzdllnlz" method="POST" id="regForm">
+        <h3 class="section-title">👤 Personal Information</h3>
+        <div class="row">
+            <div class="col"><input type="text" name="full_name" placeholder="Full Name *" required></div>
+            <div class="col"><input type="text" name="father_name" placeholder="Father Name *" required></div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="date" name="date_of_birth"></div>
+            <div class="col"><input type="email" name="email" placeholder="Email *" required></div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" name="phone" id="phone" placeholder="Phone Number (11 digits) *" required>
+                    <div id="phoneError" class="error-message">Phone number must be exactly 11 digits!</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" name="cnic" id="cnic" placeholder="CNIC / B-Form Number (13 digits) *" required>
+                    <div id="cnicError" class="error-message">CNIC must be exactly 13 digits!</div>
+                </div>
+            </div>
+        </div>
+
+        <input type="text" name="address" placeholder="Address (min 10 characters) *" style="width: 100%; margin-bottom: 20px;">
+
+        <h3 class="section-title">🎓 Education & Technical Details</h3>
+        <div class="row">
+            <div class="col">
+                <select>
+                    <option>Select your computer proficiency</option>
+                    <option>Beginner</option><option>Intermediate</option>
+                    <option>Advanced</option><option>Expert</option>
+                </select>
+            </div>
+            <div class="col">
+                <select>
+                    <option>Last Qualification</option>
+                    <option>Matriculation</option><option>Intermediate</option>
+                    <option>Undergraduate</option><option>Bachelor's Degree</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="courseDropdown">Select Course*</label>
+            <select id="courseDropdown" name="course" required>
+                <option value="" disabled selected>Select a course</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Registration</button>
+    </form>
+</div>
+
+<script>
+    // 1. Courses List and Dropdown Logic
+    const courses = ["IELTS",  "PTE","SPOKEN ENGLISH", "OET", "OXFORD", "LANGUAGE CERT", "DUOLINGO", "TOEFL", "GRAPHICS DESIGNING", "WEB DEVELOPMENT", "DIGITAL MARKETING", "SOCIAL MEDIA MARKETING", "BASIC IT", "VIDEO EDITING", "GOOGLE ADS", "MICROSOFT OFFICE", "EXCEL", "TYPING", "FREELANCING"];
+    const dropdown = document.getElementById('courseDropdown');
+    courses.forEach(course => {
+        let option = document.createElement("option");
+        option.value = course;
+        option.text = course;
+        dropdown.appendChild(option);
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedCourse = urlParams.get('course');
+    if (selectedCourse) dropdown.value = selectedCourse;
+
+    // 2. Validation Logic on Submit
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+        let isValid = true;
+        
+        // Phone Check
+        const phone = document.getElementById('phone');
+        if (phone.value.length !== 11) {
+            document.getElementById('phoneError').style.display = 'block';
+            phone.classList.add('input-error');
+            isValid = false;
+        } else {
+            document.getElementById('phoneError').style.display = 'none';
+            phone.classList.remove('input-error');
+        }
+
+        // CNIC Check
+        const cnic = document.getElementById('cnic');
+        if (cnic.value.length !== 13) {
+            document.getElementById('cnicError').style.display = 'block';
+            cnic.classList.add('input-error');
+            isValid = false;
+        } else {
+            document.getElementById('cnicError').style.display = 'none';
+            cnic.classList.remove('input-error');
+        }
+
+        if (!isValid) e.preventDefault(); 
+        else alert("Registration Successful!");
+    });
+</script>
+
+</body>
+</html>
