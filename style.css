@@ -1,5 +1,5 @@
 /* ==========================================================
-   LEADERS ENGLISH INSTITUTE - FINAL RESPONSIVE CSS
+   LEADERS ENGLISH INSTITUTE - CLEAN & FINAL RESPONSIVE CSS
    ========================================================== */
 
 /* 1. Global Screen Fix */
@@ -7,6 +7,7 @@ html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 img {
@@ -15,7 +16,7 @@ img {
 }
 
 /* ==========================================================
-   2. MOBILE RESPONSIVE FIXES (Phone ke liye)
+   2. MOBILE RESPONSIVE FIXES (Max-Width: 768px)
    ========================================================== */
 @media (max-width: 768px) {
     
@@ -23,11 +24,11 @@ img {
     section, header, footer, .py-20, .px-20, .px-16 {
         padding-left: 16px !important;
         padding-right: 16px !important;
-        padding-top: 30px !important;
-        padding-bottom: 30px !important;
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
     }
 
-    /* B. Columns ko stack karna */
+    /* B. Columns Stack Fix */
     section.flex, footer, div.flex, .row {
         display: flex !important;
         flex-direction: column !important;
@@ -36,13 +37,13 @@ img {
         text-align: center !important;
     }
 
-    /* C. Width fix */
+    /* C. Width Fixes */
     [class*="w-1/2"], [class*="w-1/4"], .col {
         width: 100% !important;
         max-width: 100% !important;
     }
 
-    /* D. MAGIC FIX (Text First, Image Below) */
+    /* D. Magic Order Fix (Text First, Image Below) */
     section.flex > div {
         order: 1 !important;
     }
@@ -59,232 +60,32 @@ img {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
     }
 
-    /* E. Navbar & 3-Dots Mobile Dropdown Fix */
-    header nav {
-        display: none !important;
-    }
-    
-    /* Mobile Menu Drawer (Side par open honay ke liye) */
-    .mobile-menu, nav.mobile-open, .menu-dropdown {
-        position: fixed !important;
-        top: 0 !important;
-        right: 0 !important;
-        width: 260px !important;
-        height: 100vh !important;
-        background: #ffffff !important;
-        box-shadow: -5px 0 25px rgba(0,0,0,0.15) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 40px 20px !important;
-        z-index: 9999 !important;
-        transition: transform 0.3s ease-in-out !important;
-    }
-
-    header {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        padding: 12px 16px !important;
-    }
-    header img {
-        max-height: 40px !important;
-        width: auto !important;
-    }
-
-    /* F. Registration Form Fixes */
-    .form-card, form {
-        width: 100% !important;
-        padding: 20px !important;
-        margin: 10px auto !important;
-        box-shadow: none !important;
-        border: 1px solid #e1e7eb !important;
-    }
-    
-    input, select, textarea {
-        width: 100% !important;
-        padding: 12px 14px !important;
-        border-radius: 8px !important;
-        border: 1px solid #cbd5e1 !important;
-        background-color: #f8fafc !important;
-        font-size: 15px !important;
-        margin-bottom: 14px !important;
-    }
-    
-    .submit-btn {
-        width: 100% !important;
-        padding: 14px !important;
-        border-radius: 8px !important;
-    }
-
-    /* G. Headings Resize & Profession Mastery Fix */
-    .text-7xl, h1 { 
-        font-size: 2rem !important; 
-        line-height: 1.15 !important;
-        word-break: break-word !important;
-        padding: 0 5px !important;
-    }
-    .text-5xl, h2 { 
-        font-size: 1.6rem !important; 
-        line-height: 1.2 !important; 
-    }
-    .text-2xl { 
-        font-size: 1.1rem !important; 
-    }
-
-    /* H. Courses Section & Center Layout */
-    .main-wrapper, .courses-section, .container {
-        display: block !important;
-        width: 100% !important;
-        padding: 10px !important;
-    }
-
-    #sidebar {
-        width: 100% !important;
-        margin-bottom: 20px !important;
-    }
-
-    #courses-grid, .course-grid, .courses-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        justify-content: center !important;
-    }
-
-    .card, .box, .course-item {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        background: #ffffff !important;
-        border-radius: 16px !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-        margin: 0 auto 15px auto !important;
-    }
-
-    .card img, .course-item img {
-        width: 100% !important;
-        height: 190px !important;
-        object-fit: cover !important;
-    }
-
-    .card-body, .course-item > div:not(img) {
-        padding: 18px !important;
-    }
-}
-
-/* ==========================================================
-   FINAL MOBILE COURSES & LAYOUT FIX (CSS ONLY)
-   ========================================================== */
-@media (max-width: 768px) {
-    
-    /* 1. Main container aur wrapper ko proper block layout dena */
-    .main-wrapper, .courses-section, .container {
-        display: block !important;
-        width: 100% !important;
-        padding: 10px !important;
-        margin-top: 15px !important;
-    }
-
-    /* 2. Filters section ko upar aur courses grid ko uske neeche set karna */
-    .sidebar, .filters-section, .filter-container {
-        width: 100% !important;
-        margin-bottom: 20px !important;
-        background: #ffffff !important;
-        padding: 15px !important;
-        border-radius: 12px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-    }
-
-    /* 3. Search input aur buttons ko 100% width dena */
-    .search-input, .filters-section input, .filter-container input, 
-    .filter-btn, .filters-section button, .filter-container button {
-        width: 100% !important;
-        margin: 0 0 10px 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 4. Courses grid ko 1-column mobile format mein convert karna */
-    #courses-grid, .course-grid, .courses-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-
-    /* 5. Course Card ko SMIT Style Banner Card banana */
-    .card, .box, .course-item {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        background: #ffffff !important;
-        border-radius: 16px !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-        border: 1px solid #e2e8f0 !important;
-        margin: 0 auto 15px auto !important;
-    }
-
-    /* 6. Card ke andar banner image ki height aur styling */
-    .card img, .course-item img {
-        width: 100% !important;
-        height: 190px !important;
-        object-fit: cover !important;
-        border-bottom: 1px solid #f1f5f9 !important;
-    }
-
-    /* 7. Card content ki padding aur alignment */
-    .card-body, .course-item > div:not(img) {
-        padding: 18px !important;
-        text-align: left !important;
-        display: flex !important;
-        flex-direction: column !important;
-        flex-grow: 1 !important;
-    }
-
-    /* 8. Course Title Styling */
-    .card h3, .card h4, .course-item h3 {
-        font-size: 1.15rem !important;
-        font-weight: 700 !important;
-        color: #1e293b !important;
-        margin-top: 0 !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* 9. Enroll Button Full Width */
-    .enroll-btn {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        text-align: center !important;
-        margin-top: 15px !important;
-    }
-}
-
-/* ==========================================================
-   FINAL MOBILE SIDE DRAWER & SCROLLABLE MENU FIX
-   ========================================================== */
-@media (max-width: 768px) {
-    
-    /* 1. Header layout fix (Logo left, 3-dots right) */
+    /* E. Header & Mobile Menu Setup */
     header, .header-container {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
         padding: 12px 16px !important;
-        position: relative !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        position: relative !important;
         z-index: 1000 !important;
+        background: #ffffff !important;
     }
 
-    /* 2. Menu button / 3-dots right side par fix */
-    .menu-toggle, .hamburger, header span:last-child, header button:last-child {
+    header img {
+        max-height: 40px !important;
+        width: auto !important;
+    }
+
+    /* Hide desktop navbar on mobile */
+    header nav:not(.mobile-menu):not(.menu-dropdown) {
+        display: none !important;
+    }
+
+    /* Mobile 3-Dots / Hamburger Button */
+    .menu-toggle, .hamburger, header button {
         display: block !important;
         cursor: pointer !important;
         font-size: 24px !important;
@@ -293,90 +94,11 @@ img {
         padding: 5px !important;
     }
 
-    /* 3. Right Side Sliding Drawer with Scroll */
-    nav, .nav-links, .mobile-menu, nav.mobile-open, .menu-dropdown {
+    /* F. Side Sliding Drawer Menu Fix (Hidden by default, slides in when active) */
+    .mobile-menu, nav.mobile-open, .menu-dropdown, nav {
         position: fixed !important;
         top: 0 !important;
-        right: -100% !important; /* Shuru mein screen se bilkul bahar */
-        width: 270px !important;
-        height: 100vh !important;
-        background: #ffffff !important;
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 70px 20px 30px 20px !important;
-        z-index: 99999 !important;
-        transition: right 0.3s ease-in-out !important;
-        box-sizing: border-box !important;
-        overflow-y: auto !important; /* Yeh menu ke andar scroll enable karega */
-    }
-
-    /* Jab menu active ho toh right se screen par aa jaye */
-    nav.active, .mobile-menu.active, nav.mobile-open, .menu-dropdown.open {
-        right: 0 !important;
-    }
-
-    /* 4. Menu links ki proper styling */
-    nav a, .mobile-menu a, .menu-dropdown a {
-        display: block !important;
-        width: 100% !important;
-        padding: 14px 16px !important;
-        color: #1e293b !important;
-        text-decoration: none !important;
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        border-bottom: 1px solid #f1f5f9 !important;
-        text-align: left !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 5. Apply button inside menu */
-    nav .apply-btn, nav button, .mobile-menu .apply-btn {
-        width: 100% !important;
-        margin-top: 20px !important;
-        text-align: center !important;
-        box-sizing: border-box !important;
-    }
-}
-
-
-/* ==========================================================
-   FINAL PERFECT MOBILE FIX: SIDE MENU & ACHIEVEMENT SECTION
-   ========================================================== */
-@media (max-width: 768px) {
-    
-    /* 1. Header & Menu Button alignment */
-    header, .header-container {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 12px 16px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        position: relative !important;
-        z-index: 1000 !important;
-        background: #ffffff !important;
-    }
-
-    /* 2. Menu overlay / backdrop taake piche wala text na dikhe jab menu khule */
-    body.menu-open::after {
-        content: '' !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background: rgba(0, 0, 0, 0.4) !important;
-        z-index: 9998 !important;
-    }
-
-    /* 3. Right Side Sliding Drawer Menu Fix */
-    nav, .nav-links, .mobile-menu, nav.mobile-open, .menu-dropdown {
-        position: fixed !important;
-        top: 0 !important;
-        right: -280px !important; /* Screen se bilkul bahar */
+        right: -280px !important; /* Shuru mein screen se bahar */
         width: 260px !important;
         height: 100vh !important;
         background: #ffffff !important;
@@ -391,13 +113,13 @@ img {
         overflow-y: auto !important;
     }
 
-    /* Jab menu open ho toh screen par smooth aa jaye */
-    nav.active, .mobile-menu.active, nav.mobile-open, .menu-dropdown.open {
+    /* Active state when JS adds .active or .mobile-open */
+    .mobile-menu.active, nav.active, nav.mobile-open, .menu-dropdown.open {
         right: 0 !important;
     }
 
-    /* Menu links styling */
-    nav a, .mobile-menu a, .menu-dropdown a {
+    /* Menu Links Styling */
+    .mobile-menu a, nav a, .menu-dropdown a {
         display: block !important;
         width: 100% !important;
         padding: 14px 16px !important;
@@ -410,8 +132,104 @@ img {
         box-sizing: border-box !important;
     }
 
-    /* 4. Achievement Section Proper Center & Spacing Fix */
-    .achievement-section, .achievements, section.max-w-6xl, .hero-section {
+    /* G. Registration Form Fixes */
+    .form-card, form {
+        width: 100% !important;
+        padding: 20px !important;
+        margin: 10px auto !important;
+        box-shadow: none !important;
+        border: 1px solid #e1e7eb !important;
+        box-sizing: border-box !important;
+    }
+    
+    input, select, textarea {
+        width: 100% !important;
+        padding: 12px 14px !important;
+        border-radius: 8px !important;
+        border: 1px solid #cbd5e1 !important;
+        background-color: #f8fafc !important;
+        font-size: 15px !important;
+        margin-bottom: 14px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .submit-btn {
+        width: 100% !important;
+        padding: 14px !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* H. Headings & Typography Resize */
+    .text-7xl, h1 { 
+        font-size: 2rem !important; 
+        line-height: 1.15 !important;
+        word-break: break-word !important;
+    }
+    .text-5xl, h2 { 
+        font-size: 1.6rem !important; 
+        line-height: 1.2 !important; 
+    }
+    .text-2xl { 
+        font-size: 1.1rem !important; 
+    }
+
+    /* I. Courses Section & Grid Layout */
+    .main-wrapper, .courses-section, .container {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    #sidebar, .sidebar, .filters-section, .filter-container {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        background: #ffffff !important;
+        padding: 15px !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    #courses-grid, .course-grid, .courses-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .card, .box, .course-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #ffffff !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid #e2e8f0 !important;
+        margin: 0 auto 15px auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .card img, .course-item img {
+        width: 100% !important;
+        height: 190px !important;
+        object-fit: cover !important;
+    }
+
+    .card-body, .course-item > div:not(img) {
+        padding: 18px !important;
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-grow: 1 !important;
+    }
+
+    /* J. Achievement / Metrics Section Proper Alignment */
+    .achievement-section, .achievements, section.max-w-6xl {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -419,37 +237,341 @@ img {
         width: 100% !important;
         padding: 30px 16px !important;
         box-sizing: border-box !important;
+    }
+
+    .achievement-section .grid, section.max-w-6xl .grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .achievement-section div[class*="p-"], section.max-w-6xl > div > div {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   FINAL FIXED MOBILE CSS (Menu Drawer & Achievements Fix)
+   ========================================================== */
+
+@media (max-width: 768px) {
+    
+    /* 1. Global Reset */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
         margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* Achievement Headings & Text Resize for Mobile */
-    .achievement-section h1, .achievements h1, section.max-w-6xl h1 {
-        font-size: 2rem !important;
-        line-height: 1.2 !important;
-        margin-bottom: 15px !important;
-        word-break: break-word !important;
+    /* 2. Header & 3-Dots Alignment */
+    header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 12px 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        background: #ffffff !important;
+        position: relative !important;
+        z-index: 1001 !important;
     }
 
-    .achievement-section p, .achievements p, section.max-w-6xl p {
-        font-size: 1rem !important;
-        line-height: 1.5 !important;
-        padding: 0 10px !important;
+    /* Hide desktop nav */
+    header nav:not(.mobile-menu):not(#mobileMenu) {
+        display: none !important;
     }
 
-    /* Bullet points alignment in achievement section */
-    .achievement-section ul, section.max-w-6xl ul {
+    /* 3-Dots / Hamburger Button Styling */
+    .menu-toggle, header button {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        font-size: 26px !important;
+        cursor: pointer !important;
+        z-index: 1002 !important;
+    }
+
+    /* 3. Right Side Sliding Menu Drawer (Jaise video mein hai) */
+    .mobile-menu, #mobileMenu, nav.mobile-drawer {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Shuru mein screen se bahar */
+        width: 260px !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15) !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        margin: 20px auto !important;
-        padding-left: 20px !important;
-        width: 100% !important;
-        max-width: 320px !important;
+        padding: 70px 20px 20px 20px !important;
+        z-index: 1000 !important;
+        transition: right 0.3s ease-in-out !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
     }
 
-    .achievement-section li, section.max-w-6xl li {
-        font-size: 1rem !important;
-        margin-bottom: 10px !important;
+    /* Jab menu active/open ho */
+    .mobile-menu.active, #mobileMenu.active, nav.mobile-drawer.active {
+        right: 0 !important;
+    }
+
+    /* Menu Links */
+    .mobile-menu a, #mobileMenu a, nav.mobile-drawer a {
+        display: block !important;
+        width: 100% !important;
+        padding: 14px 10px !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #1e293b !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #f1f5f9 !important;
         text-align: left !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Achievements Section Fix (1-Column Stacked) */
+    .achievement-section, .achievements, section.max-w-6xl {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 30px 16px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    /* Force Grid to single column */
+    .achievement-section .grid, section.max-w-6xl .grid, div.grid-cols-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* Achievement Cards Full Width */
+    .achievement-section div, section.max-w-6xl > div > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* ==========================================================
+   FINAL FIXED HEADER & MOBILE STYLING
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    /* 1. Light Blue Background & Blur Header */
+    header, .header-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1001 !important;
+        
+        /* Light Blue + Glassmorphism Blur */
+        background: rgba(239, 246, 255, 0.9) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-bottom: 1px solid rgba(191, 219, 254, 0.8) !important;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.05) !important;
+    }
+
+    /* Logo aur Title Container (Left Side) */
+    header .flex, header div:first-child {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin: 0 !important;
+        flex-grow: 1 !important;
+    }
+
+    /* Institute Name */
+    header span, header h1, .brand-title {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+        letter-spacing: -0.3px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+
+    /* 3. 3-Dots Button Bilkul Right Corner Par Fixed */
+    .menu-toggle, header button#menuBtn, header button {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        background: none !important;
+        border: none !important;
+        font-size: 30px !important;
+        cursor: pointer !important;
+        color: #1e3a8a !important;
+        padding: 4px 8px !important;
+        z-index: 1002 !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Hide desktop navbar on mobile */
+    header nav:not(.mobile-menu):not(#mobileMenu) {
+        display: none !important;
+    }
+
+    /* 4. Slide Drawer Menu (Right Side se Khulne Wala) */
+    .mobile-menu, #mobileMenu {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 270px !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 70px 20px 30px 20px !important;
+        z-index: 99999 !important;
+        transition: right 0.35s ease-in-out !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Jab Menu Open Ho */
+    .mobile-menu.active, #mobileMenu.active {
+        right: 0 !important;
+    }
+
+    /* Menu Links Styling */
+    .mobile-menu a, #mobileMenu a {
+        display: block !important;
+        padding: 14px 12px !important;
+        color: #1e293b !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        text-align: left !important;
+    }
+
+    .mobile-menu a:hover, #mobileMenu a:hover {
+        color: #2563eb !important;
+    }
+
+    /* Apply Now Button inside Menu */
+    .mobile-menu a.apply-btn, #mobileMenu a:last-child {
+        margin-top: 15px !important;
+        background: #2563eb !important;
+        color: #ffffff !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        border-bottom: none !important;
+    }
+}
+
+
+
+/* 1. Desktop ke liye logo ka size chota rakhein */
+header img, .logo-img {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+}
+
+/* 2. Mobile screen (768px se kam) ke liye logo thora bara ho jaye ga */
+@media (max-width: 768px) {
+    header img, .logo-img {
+        width: 55px !important;
+        height: 55px !important;
+        min-width: 55px !important;
+        max-width: 55px !important;
+        border-radius: 8px !important;
+    }
+}
+
+
+/* --- Desktop Logo & Header Styling --- */
+.header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 40px !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+.logo-img {
+    width: 45px !important;
+    height: 45px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+.brand-title {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+}
+
+/* --- Mobile View Adjustments --- */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px 16px !important;
+    }
+    
+    .logo-img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    /* Desktop nav hidden on mobile */
+    header nav.md\:flex {
+        display: none !important;
+    }
+
+    /* 3-dots button visible on mobile */
+    .menu-toggle {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        font-size: 28px !important;
+        cursor: pointer !important;
+    }
+}
+
+
+/* Desktop par mobile menu ko bilkul hide rakhein */
+.mobile-menu, #mobileMenu {
+    display: none !important;
+}
+
+/* Sirf mobile screen par yeh drawer ki shakal mein show ho */
+@media (max-width: 768px) {
+    .mobile-menu, #mobileMenu {
+        display: flex !important;
     }
 }

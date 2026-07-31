@@ -93,9 +93,80 @@
                     <a href="#" class="inline-block font-semibold text-blue-600 hover:text-blue-800 transition"><a href="blog-detail.html?type=freelancing">Read More &rarr;</a></a>
                 </div>
             </div>
+            
 
         </div>
     </main>
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('active'));
+    </script>
+    <!-- Footer Section (Fixed Alignment) -->
+<footer class="bg-black text-white py-16 px-16">
+    <div class="max-w-7xl mx-auto flex justify-between items-start gap-8">
+        
+        <!-- Column 1 -->
+        <div class="w-1/4">
+            <img src="images/logo.jpg" class="h-24 rounded-full mb-6 border-2 border-blue-500">
+            <p class="text-gray-400 text-sm">Empowering the youth with world-class IT education and training programs to build a brighter digital future.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="w-1/4">
+            <h3 class="text-xl font-bold mb-6 border-b-2 border-green-600 inline-block">LOCATION</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">
+                Sixth Road, Rawalpindi<br>
+                Plaza Name: Milhan Heights<br>
+                Second Floor, Office No. 14
+            </p>
+            <p class="mt-4 text-blue-400 text-sm">leadersenglishinstitute@gmail.com</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="w-1/4">
+            <h3 class="text-xl font-bold mb-6 border-b-2 border-red-600 inline-block">CONTACTS</h3>
+            <p class="text-lg font-bold">0318-5609528</p>
+            <p class="text-lg font-bold">0335-2333069</p>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="w-1/4">
+            <h3 class="text-xl font-bold mb-6 border-b-2 border-blue-600 inline-block">OUR COURSES</h3>
+            <ul class="text-gray-400 space-y-1 text-xs">
+                <li>IELTS, Spoken English, PTE, OET, Oxford</li>
+                <li>Language Certificate, Duolingo, TOEFL</li>
+                <li>Graphics Design, Web Development</li>
+                <li>Digital Marketing, Social Media Marketing</li>
+                <li>Basic IT, Video Editing, Google Ads</li>
+                <li>Microsoft Office, MS Excel, Typing</li>
+                <li>Freelancing</li>
+            </ul>
+        </div>
+        <!-- Apka baaki content -->
+    <div class="main-wrapper">
+        
+    </div>
+    </div>
+</footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000 });</script>
+
+    <script>
+        
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // 3-dots par click karne se menu bahar slide ho kar aayega
+    menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+    });
+
+    
+</script>
+</body>
+</html>
+
 
 </body>
 </html>
