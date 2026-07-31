@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Detail - Leaders English Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 min-h-screen py-10 px-4 md:px-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+        
+        <div class="relative w-full h-72 md:h-96">
+            <img id="blogImage" src="images/it.jpg" alt="Blog Image" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 md:p-10">
+                <span id="blogCategory" class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Technology & IT</span>
+            </div>
+        </div>
+
+        <div class="p-6 md:p-12">
+            <h1 id="blogTitle" class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+                Mastering IT & Modern Tools in 2026: A Complete Guide
+            </h1>
+            
+            <div class="flex items-center text-sm text-gray-500 mb-8 space-x-4 border-b border-gray-100 pb-4">
+                <span>📅 Published on July 31, 2026</span>
+                <span>⏱️ 5 min read</span>
+                <span>✍️ By Leaders Institute</span>
+            </div>
+
+            <div id="blogText" class="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed">
+                </div>
+
+            <div class="mt-10 pt-6 border-t border-gray-100 flex justify-between items-center">
+                <a href="blogs.html" class="inline-flex items-center font-semibold text-blue-600 hover:text-blue-800 transition">
+                    &larr; Back to Blogs
+                </a>
+                <a href="courses.html" class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-green-700 transition shadow">
+                    Explore Courses
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Database for all 3 blogs with unique titles, categories, images, and content
+        const blogsData = {
+            "it": {
+                title: "Mastering IT & Modern Tools in 2026: A Complete Guide",
+                category: "Technology & IT",
+                badgeClass: "bg-blue-600",
+                image: "images/it.jpg",
+                content: `
+                    <p>In today's fast-paced digital ecosystem, acquiring modern IT skills is a fundamental necessity. Whether you are stepping into software development, graphic design, or digital marketing, understanding how to utilize core tools efficiently sets you apart from the crowd.</p>
+                    <p>At Leaders Institute, we focus heavily on hands-on practical learning rather than just theoretical memorization. Students are trained directly on real-world projects, enabling them to troubleshoot issues independently and adapt quickly to emerging industrial technologies.</p>
+                    <h2 class="text-2xl font-bold text-gray-800 pt-4">Why Practical Training Matters</h2>
+                    <p>Traditional learning methods often leave a gap between what is taught in classrooms and what the corporate world demands. By bridging this gap with live exercises, expert mentorship, and comprehensive module breakdowns, learners build confidence and technical competence simultaneously.</p>
+                `
+            },
+            "eng": {
+                title: "Effective Tips for Fluent Spoken English & Confidence",
+                category: "English Language",
+                badgeClass: "bg-green-600",
+                image: "images/eng.jpg",
+                content: `
+                    <p>Communication is the bridge between ambition and global success. Mastering spoken English opens doors to international platforms, multinational corporations, and confident daily social interactions. However, many learners struggle due to hesitation and fear of making mistakes.</p>
+                    <p>At Leaders Institute, our specialized English language modules are crafted to break psychological barriers completely. Through active conversational practice, interactive listening tasks, and regular public speaking sessions, students start speaking fluently and naturally from day one.</p>
+                    <h2 class="text-2xl font-bold text-gray-800 pt-4">Daily Habits for Faster Fluency</h2>
+                    <p>Fluency is not an overnight magic trick; it is built through consistent daily habits. Immersing yourself in English podcasts, reading articles out loud, and conversing in a friendly peer environment transforms passive grammar rules into active speaking skills effortlessly.</p>
+                `
+            },
+            "freelancing": {
+                title: "Starting Your Freelancing Career Successfully in 2026",
+                category: "Career Growth",
+                badgeClass: "bg-purple-600",
+                image: "images/freelancing.jpg",
+                content: `
+                    <p>The global job market has shifted heavily toward remote work and digital freelancing. Building a thriving freelance career online requires much more than just technical talent—it demands professional positioning, effective client communication, and smart profile optimization.</p>
+                    <p>Our comprehensive training tracks guide learners step-by-step from absolute scratch to landing their very first international client project. You learn how to package your services cleanly, write winning proposals, and manage professional timelines like an expert.</p>
+                    <h2 class="text-2xl font-bold text-gray-800 pt-4">The Importance of a Killer Portfolio</h2>
+                    <p>High-paying international clients always trust proven results over empty promises. By building live portfolio projects during your training program at Leaders Institute, you showcase tangible proof of your expertise that attracts clients instantly.</p>
+                `
+            }
+        };
+
+        // Read query parameter from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogType = urlParams.get('type') || 'it';
+        const currentBlog = blogsData[blogType] || blogsData['it'];
+
+        // Inject dynamic values into HTML elements
+        document.getElementById('blogTitle').innerText = currentBlog.title;
+        document.getElementById('blogCategory').innerText = currentBlog.category;
+        document.getElementById('blogCategory').className = `${currentBlog.badgeClass} text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2`;
+        document.getElementById('blogImage').src = currentBlog.image;
+        document.getElementById('blogText').innerHTML = currentBlog.content;
+    </script>
+
+</body>
+</html>

@@ -1,13 +1,12 @@
-/* ============================================================
+/* ==========================================================
    LEADERS ENGLISH INSTITUTE - FINAL RESPONSIVE CSS
-   (Desktop par Tailwind chalega, Mobile par yeh CSS fix karegi)
-   ============================================================ */
+   ========================================================== */
 
-/* 1. Global Screen Fix (Taaki website mobile ki screen se bahar na nikle) */
+/* 1. Global Screen Fix */
 html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
-    width: 100%;
+    width: 100% !important;
 }
 
 img {
@@ -15,137 +14,125 @@ img {
     height: auto;
 }
 
-/* ==========================================
+/* ==========================================================
    2. MOBILE RESPONSIVE FIXES (Phone ke liye)
-   ========================================== */
+   ========================================================== */
 @media (max-width: 768px) {
     
-    /* A. Fix Massive Padding: Mobile par extra jagah khatam karna */
+    /* A. Fix Massive Padding */
     section, header, footer, .py-20, .px-20, .px-16 {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
     }
 
-    /* B. Columns ko Stack karna: Jo cheezein aamne-saamne hain unhe upar-neechay karna */
-    section.flex, footer > div.flex, .row {
+    /* B. Columns ko stack karna */
+    section.flex, footer, div.flex, .row {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important;
+        gap: 20px !important;
         align-items: center !important;
-        text-align: center !important; /* Mobile par text center mein acha lagta hai */
+        text-align: center !important;
     }
 
-    /* C. Width Fix: 50% width wale boxes ko mobile par 100% karna */
+    /* C. Width fix */
     [class*="w-1/2"], [class*="w-1/4"], .col {
         width: 100% !important;
         max-width: 100% !important;
     }
 
     /* D. MAGIC FIX (Text First, Image Below) */
-    /* Text wale hissay ko zabardasti order 1 (Upar) kar diya */
     section.flex > div {
         order: 1 !important;
     }
-    
-    /* Picture ko zabardasti order 2 (Neechay) aur Square + Medium kar diya */
-    section.flex > img, 
+
+    section.flex > img,
     section.flex > div > img {
         order: 2 !important;
         width: 100% !important;
-        max-width: 320px !important;   /* Picture Medium Size ki hogi */
-        height: 320px !important;      /* Picture Square shape mein hogi */
-        object-fit: cover !important;  /* Picture khichegi nahi, perfectly cut hogi */
-        border-radius: 15px !important; /* SMIT ki tarah corners gol */
+        max-width: 320px !important;
+        height: 230px !important;
+        object-fit: cover !important;
+        border-radius: 16px !important;
         margin: 20px auto 0 auto !important;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
     }
 
-    /* E. Navbar Mobile Fix */
+    /* E. Navbar & 3-Dots Mobile Dropdown Fix */
     header nav {
-        display: none !important; /* Desktop menu phone par hide kar diya */
+        display: none !important;
     }
+    
+    /* Mobile Menu Drawer (Side par open honay ke liye) */
+    .mobile-menu, nav.mobile-open, .menu-dropdown {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 260px !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.15) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 40px 20px !important;
+        z-index: 9999 !important;
+        transition: transform 0.3s ease-in-out !important;
+    }
+
     header {
-        flex-direction: row !important; /* Logo aur Apply button aamne saamne rahenge */
+        flex-direction: row !important;
         justify-content: space-between !important;
-        padding: 15px 20px !important;
+        padding: 12px 16px !important;
     }
     header img {
-        max-height: 45px !important;
+        max-height: 40px !important;
         width: auto !important;
     }
 
-    /* F. Registration Form Fixes (SMIT Style) */
+    /* F. Registration Form Fixes */
     .form-card, form {
         width: 100% !important;
         padding: 20px !important;
         margin: 10px auto !important;
         box-shadow: none !important;
-        border: 1px solid #e5e7eb !important;
+        border: 1px solid #e1e7eb !important;
     }
+    
     input, select, textarea {
         width: 100% !important;
-        padding: 14px 15px !important;
+        padding: 12px 14px !important;
         border-radius: 8px !important;
         border: 1px solid #cbd5e1 !important;
         background-color: #f8fafc !important;
-        font-size: 16px !important;
-        margin-bottom: 10px !important;
+        font-size: 15px !important;
+        margin-bottom: 14px !important;
     }
+    
     .submit-btn {
         width: 100% !important;
-        padding: 16px !important;
-        border-radius: 10px !important;
+        padding: 14px !important;
+        border-radius: 8px !important;
     }
 
-    /* G. Badi Headings ko Phone ke hisaab se chota karna */
-    .text-7xl { font-size: 2.2rem !important; line-height: 1.2 !important; }
-    .text-5xl { font-size: 1.8rem !important; line-height: 1.2 !important; }
-    .text-2xl { font-size: 1.15rem !important; }
-}
-
-
-/* ==========================================
-
-
-
-
-
-@media (max-width: 768px) {
-    /* 1. Achievement section */
-    section .max-w-6xl {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-        padding: 0 15px !important;
+    /* G. Headings Resize & Profession Mastery Fix */
+    .text-7xl, h1 { 
+        font-size: 2rem !important; 
+        line-height: 1.15 !important;
+        word-break: break-word !important;
+        padding: 0 5px !important;
+    }
+    .text-5xl, h2 { 
+        font-size: 1.6rem !important; 
+        line-height: 1.2 !important; 
+    }
+    .text-2xl { 
+        font-size: 1.1rem !important; 
     }
 
-    section .max-w-6xl > div {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    /* 2. Courses section & Filters */
-    .courses-grid, .grid, .container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
-        width: 100% !important;
-        margin-top: 20px !important;
-    }
-
-    .card, .box, .course-item {
-        width: 100% !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* 3. Main wrapper & Sidebar for courses.html */
-    .main-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
+    /* H. Courses Section & Center Layout */
+    .main-wrapper, .courses-section, .container {
+        display: block !important;
         width: 100% !important;
         padding: 10px !important;
     }
@@ -155,9 +142,125 @@ img {
         margin-bottom: 20px !important;
     }
 
-    #courses-grid {
+    #courses-grid, .course-grid, .courses-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
         width: 100% !important;
+        margin: 0 auto !important;
+        justify-content: center !important;
+    }
+
+    .card, .box, .course-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 20px !important;
+        background: #ffffff !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+        margin: 0 auto 15px auto !important;
     }
+
+    .card img, .course-item img {
+        width: 100% !important;
+        height: 190px !important;
+        object-fit: cover !important;
+    }
+
+    .card-body, .course-item > div:not(img) {
+        padding: 18px !important;
+    }
+}
+
+/* ==========================================================
+   FINAL MOBILE COURSES & LAYOUT FIX (CSS ONLY)
+   ========================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Main container aur wrapper ko proper block layout dena */
+    .main-wrapper, .courses-section, .container {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px !important;
+        margin-top: 15px !important;
+    }
+
+    /* 2. Filters section ko upar aur courses grid ko uske neeche set karna */
+    .sidebar, .filters-section, .filter-container {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        background: #ffffff !important;
+        padding: 15px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    }
+
+    /* 3. Search input aur buttons ko 100% width dena */
+    .search-input, .filters-section input, .filter-container input, 
+    .filter-btn, .filters-section button, .filter-container button {
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Courses grid ko 1-column mobile format mein convert karna */
+    #courses-grid, .course-grid, .courses-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 5. Course Card ko SMIT Style Banner Card banana */
+    .card, .box, .course-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #ffffff !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid #e2e8f0 !important;
+        margin: 0 auto 15px auto !important;
+    }
+
+    /* 6. Card ke andar banner image ki height aur styling */
+    .card img, .course-item img {
+        width: 100% !important;
+        height: 190px !important;
+        object-fit: cover !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+
+    /* 7. Card content ki padding aur alignment */
+    .card-body, .course-item > div:not(img) {
+        padding: 18px !important;
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-grow: 1 !important;
+    }
+
+    /* 8. Course Title Styling */
+    .card h3, .card h4, .course-item h3 {
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 9. Enroll Button Full Width */
+    .enroll-btn {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        margin-top: 15px !important;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Leaders English Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Unique Long Floating Gradient Animation Banner */
+        @keyframes longFloat {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-banner {
+            background: linear-gradient(-45deg, #007bff, #17a2b8, #6610f2, #28a745);
+            background-size: 400% 400%;
+            animation: longFloat 12s ease infinite;
+        }
+
+        /* Card Hover & Transition Effects */
+        .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="flex justify-between items-center py-4 px-6 md:px-16">
+            <div class="flex items-center gap-3">
+                <img src="images/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover shadow-md">
+                <span class="font-bold text-lg text-gray-800">Leaders Institute</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 font-bold text-gray-700">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About</a>
+                <a href="blogs.html" class="text-blue-600 transition">Blogs</a>
+                <a href="courses.html" class="hover:text-blue-600 transition">Courses</a>
+                <a href="register.html" class="bg-green-600 text-white px-6 py-2.5 rounded-lg hover:bg-green-700 transition shadow">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Animated Long Banner Section -->
+    <section class="animated-banner text-white py-16 px-6 text-center shadow-inner">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Latest Insights & Articles</h1>
+            <p class="text-lg md:text-xl text-opacity-90">Discover expert tips, career guidance, and updates from Leaders English Institute.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid Container -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Blog Card 1 -->
+            <div class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                <img src="images/it.jpg" alt="Blog Image" class="w-full h-52 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Technology</span>
+                    <h2 class="text-xl font-bold text-gray-800 mb-3">Mastering IT & Modern Tools in 2026</h2>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Explore how hands-on tech training bridges the gap between traditional learning and industry requirements.</p>
+                    <a href="#" class="inline-block font-semibold text-blue-600 hover:text-blue-800 transition"><a href="blog-detail.html?type=it">Read More &rarr;</a></a>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                <img src="images/eng.jpg" alt="Blog Image" class="w-full h-52 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <span class="text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">English Language</span>
+                    <h2 class="text-xl font-bold text-gray-800 mb-3">Effective Tips for Fluent Spoken English</h2>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">Overcome hesitation and build confidence with daily practice routines and structured modular learning.</p>
+                    <a href="#" class="inline-block font-semibold text-blue-600 hover:text-blue-800 transition"><a href="blog-detail.html?type=eng">Read More &rarr;</a></a>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="blog-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                <img src="images/freelancing.jpg" alt="Blog Image" class="w-full h-52 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider mb-2">Career</span>
+                    <h2 class="text-xl font-bold text-gray-800 mb-3">Starting Your Freelancing Career Successfully</h2>
+                    <p class="text-gray-600 text-sm mb-6 flex-grow">A step-by-step approach to building marketable digital skills and finding your first international client.</p>
+                    <a href="#" class="inline-block font-semibold text-blue-600 hover:text-blue-800 transition"><a href="blog-detail.html?type=freelancing">Read More &rarr;</a></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
